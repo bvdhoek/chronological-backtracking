@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Backtracker.cs" />
-    <Compile Include="ChronologicalBacktracking.cs" />
+    <Compile Include="ChronologicalBacktracker.cs" />
     <Compile Include="ChronologicalBacktrackingMVC.cs" />
     <Compile Include="ForwardChecking.cs" />
     <Compile Include="ForwardCheckingMVC.cs" />
