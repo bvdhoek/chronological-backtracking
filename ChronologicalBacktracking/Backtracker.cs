@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChronologicalBacktracking
 {
-    class Backtracker
+    public abstract class Backtracker
     {
     }
 }
