@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
+    <Compile Include="Solver.cs" />
     <Compile Include="Backtracker.cs" />
     <Compile Include="ChronologicalBacktracker.cs" />
     <Compile Include="ChronologicalBacktrackingMVC.cs" />
