@@ -48,6 +48,7 @@
     <Compile Include="ChronologicalBacktrackingMVC.cs" />
     <Compile Include="ForwardChecking.cs" />
     <Compile Include="ForwardCheckingMVC.cs" />
+    <Compile Include="Sudoku.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
