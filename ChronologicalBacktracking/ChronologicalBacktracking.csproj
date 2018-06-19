@@ -43,6 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
+    <Compile Include="Backtracker.cs" />
+    <Compile Include="ChronologicalBacktracking.cs" />
+    <Compile Include="ChronologicalBacktrackingMVC.cs" />
+    <Compile Include="ForwardChecking.cs" />
+    <Compile Include="ForwardCheckingMVC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
