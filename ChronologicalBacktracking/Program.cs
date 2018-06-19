@@ -10,8 +10,7 @@ namespace ChronologicalBacktracking
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+            Solver.Solve(new ChronologicalBacktracker(), new Sudoku());
         }
     }
 }

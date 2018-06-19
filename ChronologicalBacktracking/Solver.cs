@@ -9,12 +9,22 @@ namespace ChronologicalBacktracking
     class Solver
     {
         Backtracker backtracker;
-        Sudoko sudoko;
+        Sudoku sudoko;
 
-        public Solver(Backtracker backtracker, Sudoko sudoko)
+        public Solver(Backtracker backtracker, Sudoku sudoko)
         {
             this.backtracker = backtracker;
             this.sudoko = sudoko;
+        }
+
+        public static Sudoku Solve(Backtracker backtracker, Sudoku sudoku)
+        {
+            return new Solver(backtracker, sudoku).SolvePuzzle();
+        }
+
+        private Sudoku SolvePuzzle()
+        {
+            return new Sudoku();
         }
     }
 }
