@@ -25,7 +25,7 @@ namespace Assignment_2 {
             }
         }
 
-        public override bool Solve(Cell cell) {
+        public bool Solve(Cell cell) {
             if (cell == null)
                 return true;
             if (cell.value != 0)
@@ -44,7 +44,7 @@ namespace Assignment_2 {
             return false;
         }
 
-        public override Cell NextCell(Cell cell) {
+        public Cell NextCell(Cell cell) {
             current = orderedCells.IndexOf(cell) + 1;
             if (current >= 81)
                 return null;
@@ -52,7 +52,7 @@ namespace Assignment_2 {
             return c;
         }
 
-        public override bool SatisfiesConstraints(Cell cell, int value) {
+        public bool SatisfiesConstraints(Cell cell, int value) {
             for (int i = 0; i < 9; i++) {
                 if (cells[i, cell.y].value == value || cells[cell.x, i].value == value)
                     return false;

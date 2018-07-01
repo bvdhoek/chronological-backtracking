@@ -25,7 +25,7 @@ namespace Assignment_2 {
             //                { 0, 0, 0, 0, 0, 0, 0, 7, 4 },
             //                { 0, 0, 5, 2, 0, 6, 3, 0, 0 } };
             Console.WriteLine(SukdokuName);
-            Solver solver = new ForwardChecker(values);
+            Solver solver = new ForwardCheckerMCV(values);
 
             //Cell cell = new Cell(0, 0, 4);
             //Console.WriteLine(cell.domain.ToString());

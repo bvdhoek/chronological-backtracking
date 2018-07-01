@@ -25,9 +25,5 @@ namespace Assignment_2 {
                 Console.Write("\n");
             }
         }
-
-        public abstract bool Solve(Cell cell);
-        public abstract Cell NextCell(Cell cell);
-        public abstract bool SatisfiesConstraints(Cell cell, int value);
     }
 }
