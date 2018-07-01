@@ -1,0 +1,5 @@
+*.csproj.CoreCompileInputs.cache
+*.csprojAssemblyReference.cache
+/Assignment 2.exe
+/Assignment 2.pdb
+*.cache
