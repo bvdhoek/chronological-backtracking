@@ -5,3 +5,10 @@ c:\users\bernd\source\repos\Assignment 2\Assignment 2\obj\Debug\Assignment 2.csp
 c:\users\bernd\source\repos\Assignment 2\Assignment 2\obj\Debug\Assignment 2.csproj.CoreCompileInputs.cache
 c:\users\bernd\source\repos\Assignment 2\Assignment 2\obj\Debug\Assignment 2.exe
 c:\users\bernd\source\repos\Assignment 2\Assignment 2\obj\Debug\Assignment 2.pdb
+D:\Hylia\Documents\Uni zooi\Computationele Intelligentie\CBT\Assignment 2\bin\Debug\Assignment 2.exe.config
+D:\Hylia\Documents\Uni zooi\Computationele Intelligentie\CBT\Assignment 2\bin\Debug\Assignment 2.exe
+D:\Hylia\Documents\Uni zooi\Computationele Intelligentie\CBT\Assignment 2\bin\Debug\Assignment 2.pdb
+D:\Hylia\Documents\Uni zooi\Computationele Intelligentie\CBT\Assignment 2\obj\Debug\Assignment 2.csproj.CoreCompileInputs.cache
+D:\Hylia\Documents\Uni zooi\Computationele Intelligentie\CBT\Assignment 2\obj\Debug\Assignment 2.exe
+D:\Hylia\Documents\Uni zooi\Computationele Intelligentie\CBT\Assignment 2\obj\Debug\Assignment 2.pdb
+D:\Hylia\Documents\Uni zooi\Computationele Intelligentie\CBT\Assignment 2\obj\Debug\Assignment 2.csprojResolveAssemblyReference.cache
