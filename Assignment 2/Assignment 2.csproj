@@ -46,6 +46,8 @@
     <Compile Include="ChronologicalBacktracker.cs" />
     <Compile Include="ChronologicalBacktrackerMCV.cs" />
     <Compile Include="Domain.cs" />
+    <Compile Include="ForwardChecker.cs" />
+    <Compile Include="ForwardCheckerMCV.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Solver.cs" />
