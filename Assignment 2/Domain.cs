@@ -9,8 +9,12 @@ namespace Assignment_2 {
         public int Count { get; set; }
         int domain;
 
-        public Domain() {
-            this.domain = 511; // set last 9 bits
+        public Domain(int value) {
+            if (value == 0) {
+                domain = 511; // set last 9 bits
+            } else {
+                domain = 1 << (value - 1);
+            }
             Count = CountSetBits();
         }
 

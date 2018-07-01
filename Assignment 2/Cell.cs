@@ -10,10 +10,10 @@ namespace Assignment_2 {
         public Domain domain;
 
         public Cell(int x, int y, int value) {
-            this.domain = new Domain();
-            this.value = value;
             this.x = x;
             this.y = y;
+            this.value = value;
+            this.domain = new Domain(value);
         }
     }
 }
