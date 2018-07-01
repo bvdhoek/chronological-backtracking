@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 namespace Assignment_2 {
     class ForwardChecker : Solver {
         public ForwardChecker(int[,] values) : base(values) {
+            for (int y = 0; y < 9; y++) {
+                for (int x = 0; x < 9; x++) {
+                    if (cells[x, y].value != 0) {
+                        CheckForward(cells[x, y], cells[x, y].value);
+                    }
+                }
+            }
             if (Solve(cells[0, 0])) {
                 PrintCells();
             } else {
@@ -18,19 +25,18 @@ namespace Assignment_2 {
             if (cell == null)
                 return true;
             if (cell.value != 0) {
-                CheckForward(cell, cell.value);
+                //Console.WriteLine(cell.x + ", " + cell.y + ": " + cell.value);
                 return Solve(NextCell(cell));
             }
-
+            //Console.WriteLine(cell.x + ", " + cell.y + ": " + cell.domain.ToString());
             for (int value = 1; value <= 9; value++) {
-                if (!cell.domain.Contains(value))
-                    continue;
-                
-                cell.value = value;
-                CheckForward(cell, value);
-                if (Solve(NextCell(cell))) {
-                    return true;
-                } else {
+                if (cell.domain.Contains(value)) {
+                    cell.value = value;
+                    List<int> changedCells = CheckForward(cell, value);
+                    if (Solve(NextCell(cell))) {
+                        return true;
+                    }
+                    RevertChanges(changedCells, value);
                     cell.value = 0;
                 }
             }
@@ -75,10 +81,15 @@ namespace Assignment_2 {
             return true;
         }
 
-        public void CheckForward(Cell cell, int value) {
+        public List<int> CheckForward(Cell cell, int value) {
+            List<int> changedCells = new List<int>();
             for (int i = 0; i < 9; i++) {
-                cells[i, cell.y].domain.Remove(value);
-                cells[cell.x, i].domain.Remove(value);
+                if (cells[i, cell.y].domain.Remove(value)) {
+                    changedCells.Add((cell.y << 4) + i);
+                }
+                if (cells[cell.x, i].domain.Remove(value)) {
+                    changedCells.Add((i << 4) + cell.x);
+                }
             }
 
             int x1 = 3 * (cell.x / 3);
@@ -88,9 +99,21 @@ namespace Assignment_2 {
 
             for (int x = x1; x <= x2; x++) {
                 for (int y = y1; y <= y2; y++) {
-                    cells[x, y].domain.Remove(value);
+                    if (cells[x, y].domain.Remove(value)) {
+                        changedCells.Add((y << 4) + x);
+                    }
                 }
             }
+            return changedCells.Distinct().ToList();
+        }
+
+        public void RevertChanges(List<int> changedCells, int value) {
+            int changedCell;
+            for (int i = 0; i < changedCells.Count; ++i) {
+                changedCell = changedCells[i];
+                cells[changedCell & 15, changedCell >> 4].domain.Add(value);
+            }
+
         }
     }
 }

@@ -19,14 +19,25 @@ namespace Assignment_2 {
         }
 
         public bool Contains(int n) {
-            return ((domain & (1 << (n - 1))) != 0);
+            return (((domain >> (n - 1)) & 1) == 1);
         }
 
-        public void Remove(int n) {
+        public bool Remove(int n) {
             if (n != 0 && Contains(n)) {
                 domain = (domain ^ (1 << (n - 1)));
                 Count--;
+                return true;
             }
+            return false;
+        }
+
+        public bool Add(int n) {
+            if (n != 0 && !Contains(n)) {
+                domain = (domain | (1 << (n - 1)));
+                Count++;
+                return true;
+            }
+            return false;
         }
 
         private int CountSetBits() {
@@ -42,7 +53,7 @@ namespace Assignment_2 {
             string result = "";
             for (int i = 9; i >= 1; i--) {
                 if (Contains(i)) {
-                    result += "1";
+                    result += i;
                 } else {
                     result += "0";
                 }
