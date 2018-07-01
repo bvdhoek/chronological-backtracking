@@ -5,42 +5,44 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Assignment_2 {
-    public class Domain {
+    public class Domain { // A domain keeps track of which values a cell can still have
         public int Count { get; set; }
-        int domain;
+        int domain; // The domain stores the information as 9 bits
 
         public Domain(int value) {
             if (value == 0) {
-                domain = 511; // set last 9 bits
+                domain = 511; // Set last 9 bits
             } else {
-                domain = 1 << (value - 1);
+                domain = 1 << (value - 1); // Sets only the bit corresponding to the value
             }
             Count = CountSetBits();
         }
 
-        public bool Contains(int n) {
-            return (((domain >> (n - 1)) & 1) == 1);
+        public bool Contains(int value) {
+            // Check if the domain contains the value
+            return (((domain >> (value - 1)) & 1) == 1);
         }
 
-        public bool Remove(int n) {
-            if (n != 0 && Contains(n)) {
-                domain = (domain ^ (1 << (n - 1)));
+        public bool Remove(int value) {
+            // Removes a value from the domain, returns true if successfull
+            if (value != 0 && Contains(value)) {
+                domain = (domain ^ (1 << (value - 1)));
                 Count--;
                 return true;
             }
             return false;
         }
 
-        public bool Add(int n) {
-            if (n != 0 && !Contains(n)) {
-                domain = (domain | (1 << (n - 1)));
+        public void Add(int value) {
+            // Adds a value to the domain
+            if (value != 0 && !Contains(value)) {
+                domain = (domain | (1 << (value - 1)));
                 Count++;
-                return true;
             }
-            return false;
         }
 
         private int CountSetBits() {
+            // Counts the size of the domain
             int count = 0;
             for (int i = 1; i <= 9; i++) {
                 if (Contains(i))
@@ -50,6 +52,7 @@ namespace Assignment_2 {
         }
 
         public override string ToString() {
+            // Lists the domain as a string
             string result = "";
             for (int i = 9; i >= 1; i--) {
                 if (Contains(i)) {
